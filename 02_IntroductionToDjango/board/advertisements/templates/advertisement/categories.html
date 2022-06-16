@@ -11,14 +11,11 @@
     <li><a href="{% url m.url_name %}">{{ m.title }}</a></li>
     {% endfor %}
 </ul>
-
-<h1>Прошел все курсы на SkillBox. Продаю готовые домашние задания</h1>
-
+<h1>Категории</h1>
 <ul>
-    {% for course in course_pages %}
-    <li><a href="{% url course.url_name %}">{{ course.title }}</a></li>
+    {% for cat in category_list %}
+    <li>{{ cat }}</li>
     {% endfor %}
 </ul>
-
 </body>
 </html>

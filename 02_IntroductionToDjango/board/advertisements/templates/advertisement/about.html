@@ -11,11 +11,7 @@
     <li><a href="{% url m.url_name %}">{{ m.title }}</a></li>
     {% endfor %}
 </ul>
-
-<img src={{ context.img_url }} width="150" height="150" alt="">
-<br>
-<a href={{ context.link_to_the_course }}>{{ context.course_name }}</a>
-<br>
-<p>Стоимость {{ context.price }} ₽</p>
+    <h1>{{ context.name }}</h1>
+    <p>{{ context.description }}</p>
 </body>
 </html>
