@@ -17,5 +17,15 @@
     <li>{{ reg }}</li>
     {% endfor %}
 </ul>
+
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="data" value="" />
+    <input type="submit" />
+</form>
+
+{% if key%}
+<h2>Регион успешно создан</h2>
+{% endif %}
 </body>
 </html>

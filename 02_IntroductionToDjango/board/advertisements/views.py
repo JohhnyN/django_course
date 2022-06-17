@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.views import View
 
 menu = [{'title': 'Главная', 'url_name': 'advertisement_list'},
         {'title': 'Категории', 'url_name': 'categories'},
@@ -104,8 +104,23 @@ def categories(request):
                   {'title': title, 'category_list': category_list, 'menu': menu})
 
 
-def regions(request):
-    regions = ('Москва', 'Московская область', 'республика Алтай', 'Вологодская область')
-    title = 'Категории'
-    return render(request, 'advertisement/regions.html',
-                  {'regions': regions, 'menu': menu})
+# def regions(request):
+#     regions = ('Москва', 'Московская область', 'республика Алтай', 'Вологодская область')
+#     title = 'Категории'
+#     return render(request, 'advertisement/regions.html',
+#                   {'regions': regions, 'menu': menu})
+
+
+class Regions(View):
+    def get(self, request):
+        regions = ('Москва', 'Московская область', 'республика Алтай', 'Вологодская область')
+        title = 'Регионы'
+        return render(request, 'advertisement/regions.html',
+                      {'title': title, 'regions': regions, 'menu': menu})
+
+    def post(self, request):
+        regions = ('Москва', 'Московская область', 'республика Алтай', 'Вологодская область')
+        title = 'Регионы'
+        key = True
+        return render(request, 'advertisement/regions.html',
+                      {'title': title, 'regions': regions, 'menu': menu, 'key': key})
