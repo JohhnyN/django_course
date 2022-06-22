@@ -1,6 +1,4 @@
-import time
-
-from django.core.exceptions import PermissionDenied
+import datetime
 
 
 class VisitorLog:
@@ -8,16 +6,11 @@ class VisitorLog:
         self.get_response = get_response
 
     def __call__(self, request):
-        ip = request.META.get('REMOTE_ADDR')
         path = request.path
         method = request.method
-        headers = request.headers
-        print(headers)
-
+        datetime_response = datetime.datetime.now()
         response = self.get_response(request)
         with open('visitorlog.txt', 'a', encoding='utf-8') as f:
-            f.write('{} {} {}'.format(ip, path, method) + '\n')
+            f.write('{} {} {}'.format(datetime_response, path, method) + '\n')
 
         return response
-
-

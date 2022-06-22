@@ -5,27 +5,28 @@
     <title>{{ title }}</title>
 </head>
 <body>
-<ul >
+
+<ul>
     {% for m in menu %}
     <li style="display: inline-block; margin-right: 5px"><a href="{% url m.url_name %}">{{ m.title }}</a></li>
     {% endfor %}
 </ul>
 
-<h1>Регионы</h1>
+<h1>Объявление</h1>
 <ul>
-    {% for reg in regions %}
-    <li>{{ reg }}</li>
+    {% for annons in announcing %}
+    <li>{{ annons }}</li>
     {% endfor %}
 </ul>
 
 <form method="post">
     {% csrf_token %}
-    <input type="text" name="data" value="" />
-    <input type="submit" />
+    <input type="text" name="data" value=""/>
+    <input type="submit"/>
 </form>
 
 {% if key%}
-<h2>Регион успешно создан</h2>
+<h2>Создание новой записи успешно выполнено</h2>
 {% endif %}
 </body>
 </html>
