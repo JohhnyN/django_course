@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from django.views.generic import TemplateView
+from .models import Advertisements
 
 menu = [{'title': 'Главная', 'url_name': 'home'},
         {'title': 'Объявления', 'url_name': 'advertisements'},
@@ -9,19 +10,11 @@ menu = [{'title': 'Главная', 'url_name': 'home'},
         ]
 
 
-# def advertisement_list(request, *args, **kwargs):
-#     advertisements = [
-#         'Мастер на час',
-#         'Выведение из запоя',
-#         'Услуги экскаватора-погрузчика, гидромолота, ямобура'
-#     ]
-#     advertisements_1 = [
-#         'Мастер на час',
-#         'Выведение из запоя',
-#         'Услуги экскаватора-погрузчика, гидромолота, ямобура'
-#     ]
-#     return render(request, 'advertisements/advertisement_list.html',
-#                   {'advertisements': advertisements, 'advertisements_1': advertisements_1})
+def advertisement_list(request, *args, **kwargs):
+    # advertisements = Advertisements.objects.all()
+    return render(request, 'advertisements/advertisements2.html',
+                  {'advertisements': 12})
+
 
 class Home(View):
     def get(self, request):
