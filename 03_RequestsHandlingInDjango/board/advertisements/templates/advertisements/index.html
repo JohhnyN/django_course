@@ -5,6 +5,7 @@
     <title>{{ title }}</title>
 </head>
 <body>
+
 <ul>
     {% for m in menu %}
     <li style="display: inline-block; margin-right: 5px"><a href="{% url m.url_name %}">{{ m.title }}</a></li>
@@ -55,6 +56,8 @@
 <h2>Вы искали</h2>
 <p>{{ q }}</p>
 {% endif %}
+
+<p>Количсетво запросов: {{ request.request_counter }}</p>
 
 
 </body>

@@ -47,6 +47,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'board.middleware.visitor_log.VisitorLog',
+    'board.middleware.visitor_log.Counter',
+    # 'board.middleware.visitor_log.Counter',
 ]
 
 ROOT_URLCONF = 'board.urls'
